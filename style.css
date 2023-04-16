@@ -1,14 +1,9 @@
 .app{
   display: flex;
   flex-direction: column;
-  border: 1px solid black;
-  border-radius: 5px;
-  width: fit-content;
   padding:10px;
-  text-align: center;
   gap:10px;
-  align-items: stretch;
-
+  
 }
 
 html{
@@ -19,25 +14,85 @@ html{
 .form{
   display: flex;
   flex-direction: row;
+  justify-content: center;
   gap:10px;
 }
 
-.todo-list{
-  padding:0;
-  margin: 0;
+input{
+  border-radius: 3px;
+  text-decoration: none;
+}
+
+.list-container{
+  display: flex;
+}
+.todo-list, .completed-list{
+  border: 1px solid rgb(192, 192, 192);
+  background-color: rgb(240, 239, 234);
+  border-radius: 5px;
+  width: 50%;
+  padding:8px;
+  margin-right: 5px;
   display: flex;
   flex-direction: column;
   list-style-type: none;
   gap:10px;
+  
 }
 
-.todo-list li{
-  display: flex;
-  justify-content: space-between;
+ul:before{
+  content:attr(aria-label);
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight:bold;
+  
 }
-.todo-list li span{
+
+.todo-list li, .completed-list li{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #e6e2d3;
+  border-radius: 4px;
+}
+.todo-list li span, .completed-list li span{
   flex-grow: 1;
   text-align: center;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: smaller;
 }
 
+svg{
+  margin-top: 2px;
+  width:18px;
+}
+.delete-btn{
+  height: 30px;
+  border: 0;
+  border-radius: 4px;
+  background: none;
+  background-color: #c94c4c;
+  fill: #f0f0f0;
+  margin: 8px;
+}
+.delete-btn:active{
+  background-color: #9e3c3c;
+}
+.edit-btn{
+  height: 30px;
+  border: 0;
+  border-radius: 4px;
+  background: none;
+  background-color: #008cba;
+  fill: #f0f0f0;
+}
+.edit-btn:active{
+  background-color: #006a8d;
+}
+.completed-btn, .incomplete-btn{
+  width: 25px;
+  height: 30px;
+}
 
+.edit-input{
+  display: none;
+}
